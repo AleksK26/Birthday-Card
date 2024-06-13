@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Dad!</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            padding: 5px;
+            box-sizing: border-box;
+            perspective: 1000px; /* Add perspective for the 3D effect */
+        }
+        .card-container {
+            width: 100%;
+            max-width: 450px;
+            height: 700px;
+            position: relative;
+        }
+        .card {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            transform-style: preserve-3d;
+            transition: transform 0.6s;
+        }
+        .card.is-flipped {
+            transform: rotateY(180deg);
+        }
+        .card-face {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            backface-visibility: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .card-front, .card-back {
+            background-color: #ffffff;
+            padding: 10px;
+            text-align: center;
+            box-sizing: border-box;
+        }
+        .card-back {
+            background-color: #faa763;
+            color: white;
+            transform: rotateY(180deg);
+        }
+        .card h1, .card p {
+            margin: 5px;
+        }
+        .card img {
+            width: 100%;
+            height: auto;
+            max-width: 350px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        .button {
+            background-color: #ff6347;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin-top: 20px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .button:hover {
+            background-color: #000;
+        }
+        .card-back h1 {
+            color: #000;
+        }
+        .card-back p {
+            font-size: 20px;
+            color: #fff;
+
+        }
+        /* Media Queries for Responsive Design */
+        @media (max-width: 600px) {
+            .card-container {
+                width: 100%;
+                height: auto;
+            }
+            .card-front {
+                width: 100%;
+                height: auto;
+            }
+            .card-back {
+                width: 100%;
+                height: auto;
+            }
+            .card img {
+                width: 100%;
+                height: auto;
+            }
+            .card h1 {
+                font-size: 1.5em;
+            }
+            .card p {
+                font-size: 1em;
+            }
+            .button {
+                font-size: 14px;
+                padding: 8px 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="card-container">
+        <div class="card" id="birthdayCard">
+            <div class="card-face card-front">
+                <h1>Честит Рожден ден Тате!</h1>
+                <p>Пожелавам ти всичко най-хубаво и един прекрасен празник, цъкни отдолу бутона за цялостното пожелание!</p>
+                <img src="images\448161870_1627935121301656_8055853403639131579_n.jpg" alt="Birthday Image">
+                <button class="button" onclick="flipCard()">Цъкни тук</button>
+            </div>
+            <div class="card-face card-back">
+                <h1>Честит Рожден ден, Баща ми!</h1>
+                <p>Безкрайно съм ти благодарен за всичко, което си направил за мен. От малък си ме подкрепял, за абсолютно всичко което съм искал да върша и си ме учил на трудните неща в живота. Днес ти одъртя с още една година, но пък изобщо не ти личи. Да не спираш да потдържаш форма с волейболът и лостчетата. Доста вече ми липсва и аз да съм при теб и мама и да ходя и аз с теб на лостчета, но остана още малко и посвещавам наскорощната ми победа с 30/30 точки на теб. Продължавай да бъдеш все така упорит и никога да не се отказваш. Да знаеш обичам те (не ти го казвам достатъчно) и се гордея с това, че имам такъв баща! От, Алекс</p>
+                <button class="button" onclick="flipCard()">Върни се обратно</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function flipCard() {
+            document.getElementById('birthdayCard').classList.toggle('is-flipped');
+        }
+    </script>
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
